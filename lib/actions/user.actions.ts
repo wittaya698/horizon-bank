@@ -46,7 +46,6 @@ export const signIn = async ({ email, password }: signInProps) => {
       path: "/",
       httpOnly: true,
       sameSite: "strict",
-      // secure: true,
     });
 
     const user = await getUserInfo({ userId: session.userId });
@@ -76,7 +75,6 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
 
     const dwollaCustomerUrl = await createDwollaCustomer({
       ...userData,
-      type: "personal",
     });
 
     if (!dwollaCustomerUrl) throw new Error("Error creating Dwolla customer");
@@ -101,7 +99,6 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
       path: "/",
       httpOnly: true,
       sameSite: "strict",
-      // secure: true,
     });
 
     return parseStringify(newUser);

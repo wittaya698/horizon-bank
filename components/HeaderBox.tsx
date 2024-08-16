@@ -1,3 +1,5 @@
+"use client";
+
 const HeaderBox = ({
   type = "title",
   title,

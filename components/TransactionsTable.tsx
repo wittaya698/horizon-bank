@@ -1,7 +1,8 @@
+"use client";
+
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -82,7 +83,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
                 {formatDateTime(new Date(t.date)).dateTime}
               </TableCell>
 
-              <TableCell className="pl-2 pr-10 capitalize min-w-24">
+              <TableCell className="pl-2 pr-10 capitalize min-w-24 max-md:hidden">
                 {t.paymentChannel}
               </TableCell>
 

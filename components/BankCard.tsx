@@ -1,3 +1,5 @@
+"use client";
+
 import { formatAmount } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +11,6 @@ const BankCard = ({
   userName,
   showBalance = true,
 }: CreditCardProps) => {
-  console.log(account);
   return (
     <div className="flex flex-col">
       <Link

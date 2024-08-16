@@ -20,11 +20,6 @@ declare type SignUpParams = {
   password: string;
 };
 
-declare type LoginUser = {
-  email: string;
-  password: string;
-};
-
 declare type User = {
   $id: string;
   email: string;
@@ -40,13 +35,6 @@ declare type User = {
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
-};
-
-declare type NewUserParams = {
-  userId: string;
-  email: string;
-  name: string;
-  password: string;
 };
 
 declare type Account = {
@@ -75,7 +63,6 @@ declare type Transaction = {
   category: string;
   date: string;
   image: string;
-  type: string;
   $createdAt: string;
   channel: string;
   senderBankId: string;
@@ -99,17 +86,10 @@ declare type AccountTypes =
   | "investment"
   | "other";
 
-declare type Category = "Food and Drink" | "Travel" | "Transfer";
-
 declare type CategoryCount = {
   name: string;
   count: number;
   totalCount: number;
-};
-
-declare type Receiver = {
-  firstName: string;
-  lastName: string;
 };
 
 declare type TransferParams = {
@@ -128,7 +108,6 @@ declare type NewDwollaCustomerParams = {
   firstName: string;
   lastName: string;
   email: string;
-  type: string;
   address1: string;
   city: string;
   state: string;
@@ -160,14 +139,6 @@ declare interface MobileNavProps {
   user: User;
 }
 
-declare interface PageHeaderProps {
-  topTitle: string;
-  bottomTitle: string;
-  topDescription: string;
-  bottomDescription: string;
-  connectBank?: boolean;
-}
-
 declare interface PaginationProps {
   page: number;
   totalPages: number;
@@ -176,20 +147,6 @@ declare interface PaginationProps {
 declare interface PlaidLinkProps {
   user: User;
   variant?: "primary" | "ghost";
-  dwollaCustomerId?: string;
-}
-
-// declare type User = sdk.Models.Document & {
-//   accountId: string;
-//   email: string;
-//   name: string;
-//   items: string[];
-//   accessToken: string;
-//   image: string;
-// };
-
-declare interface AuthFormProps {
-  type: "sign-in" | "sign-up";
 }
 
 declare interface BankDropdownProps {
@@ -228,11 +185,6 @@ declare interface RecentTransactionsProps {
   accounts: Account[];
   transactions: Transaction[];
   appwriteItemId: string;
-  page: number;
-}
-
-declare interface TransactionHistoryTableProps {
-  transactions: Transaction[];
   page: number;
 }
 
